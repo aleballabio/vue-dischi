@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <HeaderDI />
-    <MainDI />
+    <HeaderDI @ricerca="genreString" />
+    <MainDI :genreChosen="optionGenre" />
     <FooterDI />
   </div>
 </template>
@@ -17,6 +17,18 @@ export default {
     HeaderDI,
     MainDI,
     FooterDI,
+  },
+
+  data() {
+    return {
+      optionGenre: "",
+    };
+  },
+
+  methods: {
+    genreString(genre) {
+      this.optionGenre = genre;
+    },
   },
 };
 </script>

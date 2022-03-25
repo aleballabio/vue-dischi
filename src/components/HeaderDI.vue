@@ -2,8 +2,32 @@
   <header class="">
     <div class="container-fluid">
       <div class="row">
-        <div class="col d-flex align-items-center pt-3 pb-3">
+        <div
+          class="
+            col
+            d-flex
+            justify-content-between
+            align-items-center
+            pt-3
+            pb-3
+          "
+        >
           <img src="../assets/img/logo-small.svg" alt="Logo" class="logo" />
+          <div>
+            <span class="text-white pe-3">Seleziona Genere:</span>
+            <select
+              v-model="stringOption"
+              @change="$emit('ricerca', stringOption)"
+              name="Genre"
+              id="selectGenre"
+            >
+              <option value=""></option>
+              <option value="Rock">Rock</option>
+              <option value="Pop">Pop</option>
+              <option value="Jazz">Jazz</option>
+              <option value="Metal">Metal</option>
+            </select>
+          </div>
         </div>
       </div>
     </div>
@@ -13,6 +37,12 @@
 <script>
 export default {
   name: "HeaderDI",
+
+  data() {
+    return {
+      stringOption: "",
+    };
+  },
 };
 </script>
 
